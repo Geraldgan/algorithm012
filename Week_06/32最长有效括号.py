@@ -19,8 +19,8 @@ class Solution:
             if s[i] == ')':    # 另一种情况
                 if s[i-1] == '(':       # 细分
                     dp[i] = dp[i-2] + 2
-                if s[i-1] == ')' and s[i-1-dp[i-1]] == '(' and i-1-dp[i-1] >= 0: # 复杂的一种情况，需要特判
-                    dp[i] = dp[i-1- dp[i-1] -1] + 2 + dp[i-1]
+                if s[i-1] == ')' and s[i-1-dp[i-1]] == '(' and i-1-dp[i-1] >= 0:  # 复杂的一种情况，需要特判
+                    dp[i] = dp[i - 1 - dp[i-1] - 1] + 2 + dp[i-1]
         print(dp)
         return max(dp)
 
